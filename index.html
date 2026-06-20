@@ -1,13 +1,768 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="refresh" content="0; url='Luis%20Aguilar%20-%20Landing%20index.html'">
-    <title>Redirecting…</title>
-    <meta name="robots" content="noindex">
-    <style>body{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial;margin:40px;color:#111;background:#fff}a{color:#0366d6}</style>
-  </head>
-  <body>
-    <p>Redirigiendo a la landing... Si la redirección no funciona, <a href="Luis%20Aguilar%20-%20Landing%20index.html">haz clic aquí</a>.</p>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&amp;family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:#0A0A0A;font-family:'Archivo',sans-serif;-webkit-font-smoothing:antialiased;color:#fff}
+  ::selection{background:#FF6A2C;color:#0A0A0A}
+  a{text-decoration:none;color:inherit}
+  input,textarea{font-family:'Archivo',sans-serif}
+  @keyframes rise{0%{opacity:0;transform:translateY(26px)}100%{opacity:1;transform:none}}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  @keyframes ring{0%{transform:scale(1);opacity:.5}70%,100%{transform:scale(1.9);opacity:0}}
+  .reveal{opacity:1}
+  .reveal.in{animation:rise .7s cubic-bezier(.16,1,.3,1) both}
+  .lift{transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .35s}
+  .lift:hover{transform:translateY(-5px);border-color:rgba(255,106,44,.45)!important}
+  .navlink{transition:color .2s}
+  .navlink:hover{color:#fff!important}
+  .soc-ic{transition:border-color .2s,color .2s,background .2s}
+  .soc-ic:hover{border-color:rgba(255,255,255,.4);color:#fff;background:rgba(255,255,255,.06)}
+  .btn-grad{transition:filter .2s,transform .2s}
+  .btn-grad:hover{filter:brightness(1.08);transform:translateY(-2px)}
+  .btn-wa{transition:filter .2s,transform .2s}
+  .btn-wa:hover{filter:brightness(1.06);transform:translateY(-2px)}
+  .btn-o{transition:background .2s,border-color .2s}
+  .btn-o:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.4)}
+  .wa-float{transition:transform .25s,filter .2s}
+  .wa-float:hover{transform:scale(1.07);filter:brightness(1.05)}
+  .fld{width:100%;background:#141414;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:14px 16px;color:#fff;font-size:15px;transition:border-color .2s}
+  .fld:focus{outline:none;border-color:#FF6A2C}
+  .fld::placeholder{color:rgba(255,255,255,.38)}
+  .brand-name{font-family:'Bricolage Grotesque','Archivo',sans-serif;font-weight:800;font-size:21px;letter-spacing:-.02em;background:linear-gradient(100deg,#FF6A1A,#E0245E 55%,#9B2BD0);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+  .nav-burger{display:none;align-items:center;justify-content:center;width:42px;height:42px;border-radius:11px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:#fff;cursor:pointer;flex:none}
+  .nav-burger:hover{background:rgba(255,255,255,.08)}
+  .menu-scrim{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:70}
+  .menu-scrim.open{opacity:1;pointer-events:auto}
+  .menu-drawer{position:fixed;top:0;right:0;height:100%;width:min(82vw,320px);background:#0e0e0e;border-left:1px solid rgba(255,255,255,.1);box-shadow:-20px 0 60px rgba(0,0,0,.6);transform:translateX(100%);transition:transform .34s cubic-bezier(.16,1,.3,1);z-index:71;display:flex;flex-direction:column;padding:22px}
+  .menu-drawer.open{transform:translateX(0)}
+  .menu-drawer a{padding:15px 6px;font-size:17px;font-weight:700;color:#fff;border-bottom:1px solid rgba(255,255,255,.07)}
+  .flip{perspective:1400px;min-height:320px;cursor:pointer}
+  .flip-inner{position:relative;width:100%;height:100%;min-height:320px;transition:transform .6s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d}
+  .flip.flipped .flip-inner{transform:rotateY(180deg)}
+  .flip-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;padding:clamp(24px,2.5vw,30px);background:#121212;border:1px solid rgba(255,255,255,.08);border-radius:18px;transition:border-color .35s}
+  .flip:hover .flip-face{border-color:rgba(255,106,44,.4)}
+  .flip-back{transform:rotateY(180deg)}
+  .flip-hint{margin-top:auto;display:flex;align-items:center;gap:7px;font-size:12px;font-weight:700;letter-spacing:.04em;color:rgba(255,255,255,.4);padding-top:14px}
+  @media(max-width:920px){
+    .hero-grid{grid-template-columns:1fr!important;gap:42px!important}
+    .hero-photo{max-width:440px;margin:0 auto;width:100%}
+    .about-grid{grid-template-columns:1fr!important}
+    .about-photo{max-width:440px;margin:0 auto;width:100%}
+    .svc-grid{grid-template-columns:1fr 1fr!important}
+    .proc-grid{grid-template-columns:1fr 1fr!important}
+    .tst-grid{grid-template-columns:1fr!important}
+    .sess-grid{grid-template-columns:1fr!important}
+    .adv-grid{grid-template-columns:1fr!important}
+    .nav-links{display:none!important}
+    .nav-burger{display:flex}
+    .nav-mobile{position:relative}
+    .brand-name{position:absolute;left:50%;transform:translateX(-50%)}
+    .stat-grid{grid-template-columns:1fr 1fr!important}
+    .course-grid{grid-template-columns:1fr!important}
+  }
+  @media(max-width:560px){
+    .svc-grid{grid-template-columns:1fr!important}
+    .proc-grid{grid-template-columns:1fr!important}
+    .certs-grid{grid-template-columns:1fr 1fr!important}
+    .nav-cta-text{display:none!important}
+    .float-card{display:none!important}
+    .hide-sm{display:none!important}
+  }
+</style>
+<script src="image-slot.js"></script>
+</helmet>
+
+<template id="__bundler_thumbnail" data-bg-color="#0A0A0A">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#0A0A0A"></rect>
+    <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF6A1A"></stop><stop offset="0.55" stop-color="#E0245E"></stop><stop offset="1" stop-color="#9B2BD0"></stop></linearGradient></defs>
+    <rect x="468" y="288" width="264" height="224" rx="44" fill="url(#g)"></rect>
+    <text x="600" y="462" font-family="Archivo, Arial, sans-serif" font-size="150" font-weight="900" fill="#fff" text-anchor="middle">LA</text>
+  </svg>
+</template>
+<div style="background:#0A0A0A;min-height:100vh;overflow-x:hidden">
+
+  <!-- NAV -->
+  <nav class="nav-mobile" style="position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:14px clamp(16px,5vw,60px);background:rgba(10,10,10,.8);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07)">
+    <button class="nav-burger" aria-label="Abrir menú" id="navBurger">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="17" x2="21" y2="17"></line></svg>
+    </button>
+    <a href="#top" class="brand-name">Luis Aguilar</a>
+    <div class="nav-links" style="display:flex;align-items:center;gap:28px;font-size:14px;font-weight:600;color:rgba(255,255,255,.62)">
+      <a href="#sobre" class="navlink">Quién soy</a>
+      <a href="#servicios" class="navlink">Qué hago</a>
+      <a href="#curso" class="navlink" style="color:#FF7A45!important">Curso</a>
+      <a href="#asesoria" class="navlink">Asesoría 1:1</a>
+    </div>
+    <a href="{{ waLink }}" target="_blank" class="btn-wa" style="display:flex;align-items:center;gap:9px;background:#25D366;color:#06240F;padding:10px 18px;border-radius:100px;font-weight:800;font-size:13.5px">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="#06240F"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.57-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"></path><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.42 1.27 4.86L2 22l5.25-1.38A9.93 9.93 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.6 0-3.09-.47-4.34-1.27l-.31-.2-3.12.82.83-3.04-.2-.32A7.93 7.93 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"></path></svg>
+      <span class="nav-cta-text">WhatsApp</span>
+    </a>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="menu-scrim" id="menuScrim"></div>
+  <div class="menu-drawer" id="menuDrawer">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+      <span class="brand-name" style="position:static;transform:none">Luis Aguilar</span>
+      <button aria-label="Cerrar menú" id="menuClose" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:#fff;cursor:pointer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="6" y1="18" x2="18" y2="6"></line></svg>
+      </button>
+    </div>
+    <a href="#sobre" class="menu-link">Quién soy</a>
+    <a href="#servicios" class="menu-link">Qué hago</a>
+    <a href="#curso" class="menu-link" style="color:#FF7A45">Curso de Meta Ads</a>
+    <a href="#testimonios" class="menu-link">Testimonios</a>
+    <a href="#asesoria" class="menu-link">Asesoría 1:1</a>
+    <a href="{{ waLink }}" target="_blank" class="btn-wa menu-link" style="display:flex;align-items:center;justify-content:center;gap:9px;background:#25D366;color:#06240F;padding:14px;border-radius:100px;font-weight:800;font-size:15px;border:none;margin-top:20px">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#06240F"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.57-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"></path><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.42 1.27 4.86L2 22l5.25-1.38A9.93 9.93 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.6 0-3.09-.47-4.34-1.27l-.31-.2-3.12.82.83-3.04-.2-.32A7.93 7.93 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"></path></svg>
+      Hablemos por WhatsApp
+    </a>
+  </div>
+
+  <!-- HERO -->
+  <header id="top" class="hero-grid" style="position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(36px,5vw,80px);align-items:center;padding:clamp(46px,6vw,94px) clamp(18px,5vw,60px) clamp(50px,6vw,84px);max-width:1280px;margin:0 auto">
+    <div style="position:absolute;top:-160px;left:50%;transform:translateX(-50%);width:min(900px,120%);height:560px;background:radial-gradient(60% 70% at 50% 35%,rgba(255,106,26,.22),rgba(224,36,94,.14) 42%,rgba(123,43,208,.12) 64%,transparent 80%);pointer-events:none;filter:blur(6px)"></div>
+    <div style="position:relative">
+      
+      <h1 class="reveal" style="font-weight:900;font-size:clamp(40px,6.6vw,82px);line-height:.93;letter-spacing:-.03em;text-transform:uppercase;margin-bottom:24px">
+        De clics<br>a clientes.<br><span style="background:linear-gradient(100deg,#FF6A1A,#E0245E 55%,#9B2BD0);-webkit-background-clip:text;background-clip:text;color:transparent">Sin humo.</span>
+      </h1>
+      <p class="reveal" style="font-size:clamp(16px,1.5vw,19px);line-height:1.62;color:rgba(255,255,255,.68);max-width:495px;margin-bottom:34px">
+        Soy <strong style="color:#fff;font-weight:700">Luis Aguilar</strong>, especialista en marketing digital y paid media con <strong style="color:#fff">+8 años</strong> dentro de las agencias de medios más grandes del mundo. Hoy ese mismo método trabaja para tu marca.
+      </p>
+      <div class="reveal" style="display:flex;flex-wrap:wrap;gap:13px;margin-bottom:38px">
+        <a href="#asesoria" class="btn-grad" style="display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,#FF6A1A,#E0245E 60%,#9B2BD0);color:#fff;padding:16px 28px;border-radius:100px;font-weight:800;font-size:15.5px">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="17" rx="2.5"></rect><line x1="3" y1="9.5" x2="21" y2="9.5"></line><line x1="8" y1="2.5" x2="8" y2="6.5"></line><line x1="16" y1="2.5" x2="16" y2="6.5"></line><path d="M8.5 14.5l2.2 2.2 4.3-4.4"></path></svg>
+          Agenda asesoría 1-1
+        </a>
+        <a href="#curso" class="btn-o" style="display: flex; align-items: center; gap: 9px; border: 1px solid rgba(255,255,255,.2); color: #fff; padding: 16px 26px; border-radius: 100px; font-weight: 700; font-size: 15.5px; background-color: #1354d5">Ver mi curso de Meta Ads →</a>
+      </div>
+      <div class="reveal" style="display:flex;align-items:center;gap:clamp(14px,2.5vw,26px);flex-wrap:wrap">
+        <span style="font-size:11px;font-weight:700;letter-spacing:.14em;color:rgba(255,255,255,.4)">CERTIFICADO EN</span>
+        <div style="display:flex;align-items:center;gap:clamp(14px,2.2vw,24px)">
+          <span style="display:flex;align-items:center;gap:8px;font-weight:800;font-size:15px;color:rgba(255,255,255,.9)">
+            <svg width="26" height="18" viewBox="0 0 36 24" fill="none"><path d="M18 12c2.5-4.5 4.5-7 8-7 3.6 0 6 3.1 6 7s-2.4 7-6 7c-3.5 0-5.5-2.5-8-7-2.5-4.5-4.5-7-8-7C6.4 5 4 8.1 4 12s2.4 7 6 7c3.5 0 5.5-2.5 8-7z" stroke="#0866FF" stroke-width="3.4"></path></svg>Meta
+          </span>
+          <span style="width:1px;height:16px;background:rgba(255,255,255,.16)"></span>
+          <span style="display:flex;align-items:center;gap:7px;font-weight:800;font-size:15px;color:rgba(255,255,255,.9)">
+            <svg width="20" height="20" viewBox="0 0 48 48"><rect x="20.5" y="5" width="7" height="33" rx="3.5" fill="#FBBC04" transform="rotate(30 24 8.5)"></rect><rect x="20.5" y="5" width="7" height="33" rx="3.5" fill="#4285F4" transform="rotate(-30 24 8.5)"></rect></svg>Google&nbsp;Ads
+          </span>
+          <span style="width:1px;height:16px;background:rgba(255,255,255,.16)"></span>
+          <span style="display:flex;align-items:center;gap:7px;font-weight:800;font-size:15px;color:rgba(255,255,255,.9)">
+            <svg width="19" height="19" viewBox="0 0 24 24"><path d="M14.5 3c.4 2.4 1.9 4 4.3 4.2v2.6c-1.4 0-2.7-.4-3.9-1.1v6.2a5.5 5.5 0 1 1-5.5-5.5c.3 0 .6 0 .9.07v2.7a2.8 2.8 0 1 0 2 2.7V3z" fill="#25F4EE" transform="translate(-1.1 .5)"></path><path d="M14.5 3c.4 2.4 1.9 4 4.3 4.2v2.6c-1.4 0-2.7-.4-3.9-1.1v6.2a5.5 5.5 0 1 1-5.5-5.5c.3 0 .6 0 .9.07v2.7a2.8 2.8 0 1 0 2 2.7V3z" fill="#FE2C55" transform="translate(1.1 -.5)"></path><path d="M14.5 3c.4 2.4 1.9 4 4.3 4.2v2.6c-1.4 0-2.7-.4-3.9-1.1v6.2a5.5 5.5 0 1 1-5.5-5.5c.3 0 .6 0 .9.07v2.7a2.8 2.8 0 1 0 2 2.7V3z" fill="#fff"></path></svg>TikTok&nbsp;Ads
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="reveal hero-photo" style="position:relative;justify-self:stretch">
+      <div style="position:absolute;inset:-1px;border-radius:24px;background:linear-gradient(150deg,rgba(255,106,26,.6),rgba(224,36,94,.3) 38%,transparent 60%);z-index:0"></div>
+      <div style="position:relative;z-index:1;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.1);aspect-ratio:1/1;background:#141414">
+        <img src="images/luis-aguilar.png" alt="Luis Aguilar" style="width:100%;height:100%;object-fit:cover;display:block">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.62),transparent 40%)"></div>
+        <div style="position:absolute;left:20px;bottom:20px">
+          <div style="font-weight:800;font-size:20px;letter-spacing:-.01em">Luis Aguilar</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.66);font-weight:500">Marketing Digital &amp; Paid Media</div>
+        </div>
+      </div>
+      
+      <div class="float-card" style="position:absolute;z-index:2;bottom:46px;right:-20px;display:flex;align-items:center;gap:11px;background:rgba(18,18,18,.9);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);padding:13px 16px;border-radius:14px;box-shadow:0 14px 40px rgba(0,0,0,.5)">
+        <span style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;background:rgba(224,36,94,.15);color:#FF5C85"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="3 17 9 11 13 15 21 7"></polyline><polyline points="15 7 21 7 21 13"></polyline></svg></span>
+        <div><div style="font-weight:900;font-size:17px;line-height:1">+8 años</div><div style="font-size:11.5px;color:rgba(255,255,255,.55)">en agencias top del mundo</div></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- STATS -->
+  <section style="border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);background:#0c0c0c">
+    <div class="stat-grid" style="display:grid;grid-template-columns:repeat(4,1fr);max-width:1280px;margin:0 auto">
+      <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+        <div class="reveal" style="padding:clamp(26px,3.5vw,42px) clamp(16px,2.5vw,32px);border-right:1px solid rgba(255,255,255,.07)">
+          <div style="font-weight:900;font-size:clamp(28px,3vw,42px);letter-spacing:-.03em;background:linear-gradient(120deg,#FF6A1A,#E0245E 60%,#9B2BD0);-webkit-background-clip:text;background-clip:text;color:transparent">{{ s.num }}</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.6);font-weight:500;margin-top:6px;line-height:1.35">{{ s.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ABOUT / QUIÉN SOY -->
+  <section id="sobre" style="padding:clamp(56px,7vw,110px) clamp(18px,5vw,60px);max-width:1280px;margin:0 auto">
+    <div class="about-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,80px);align-items:center">
+      <div class="reveal about-photo" style="position:relative">
+        <div style="border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.1);aspect-ratio:4/5;background:#141414">
+          <img src="images/luis-whatsapp.jpg" alt="Luis Aguilar en sesión de WhatsApp for Business" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block">
+        </div>
+      </div>
+      <div class="reveal">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.16em;color:#FF7A45;margin-bottom:16px">QUIÉN SOY</div>
+        <h2 style="font-weight:900;font-size:clamp(28px,3.6vw,46px);line-height:1.04;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:24px">No vendo campañas.<br>Construyo crecimiento.</h2>
+        <p style="font-size:clamp(15px,1.5vw,17px);line-height:1.7;color:rgba(255,255,255,.72);margin-bottom:18px">
+          Mi nombre es <strong style="color:#fff">Luis Aguilar</strong> y llevo más de 8 años obsesionado con una sola pregunta: <em style="color:#fff;font-style:normal">¿cómo hacer que cada peso invertido en publicidad regrese multiplicado?</em>
+        </p>
+        <p style="font-size:clamp(15px,1.5vw,17px);line-height:1.7;color:rgba(255,255,255,.72);margin-bottom:18px">
+          He construido esa respuesta dentro de tres de los grupos de medios más grandes del mundo:&nbsp;<strong style="color: rgb(255, 255, 255);">IPG Media Brands, Omnicom Media Group y Havas Media Group</strong>&nbsp;gestionando paid media a gran escala y liderando equipos de especialistas para marcas nacionales e internacionales.
+        </p>
+        <p style="font-size:clamp(15px,1.5vw,17px);line-height:1.7;color:rgba(255,255,255,.72);margin-bottom:32px">
+          Ahí dominé el ecosistema completo: <strong style="color:#fff">Meta Ads, Google Ads, TikTok Ads, DV360 y Amazon DSP</strong>, en sectores tan distintos como automotriz, retail, belleza, consumo, finanzas y eCommerce. Toda esa experiencia es la que pongo a trabajar para ti.
+        </p>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;gap:15px;align-items:flex-start;padding:16px 18px;background:#121212;border:1px solid rgba(255,255,255,.07);border-radius:13px">
+            <span style="flex:none;display:flex;align-items:center;justify-content:center;width:38px;height:38px;background:rgba(255,106,44,.13);color:#FF7A45;border-radius:10px"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2L2 7l10 5 10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg></span>
+            <div><div style="font-weight:800;font-size:15.5px;margin-bottom:2px">Multisectorial</div><div style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.5">eCommerce, automotriz, retail, belleza, consumo y finanzas.</div></div>
+          </div>
+          <div style="display:flex;gap:15px;align-items:flex-start;padding:16px 18px;background:#121212;border:1px solid rgba(255,255,255,.07);border-radius:13px">
+            <span style="flex:none;display:flex;align-items:center;justify-content:center;width:38px;height:38px;background:rgba(224,36,94,.13);color:#FF5C85;border-radius:10px"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="6" cy="6" r="2.5"></circle><circle cx="18" cy="6" r="2.5"></circle><circle cx="12" cy="18" r="2.5"></circle><path d="M7.5 7.8l3.5 8M16.5 7.8l-3.5 8M8 6h8"></path></svg></span>
+            <div><div style="font-weight:800;font-size:15.5px;margin-bottom:2px">Multicanal</div><div style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.5">Meta, Google, TikTok, DV360 y Amazon DSP bajo una sola estrategia.</div></div>
+          </div>
+          <div style="display:flex;gap:15px;align-items:flex-start;padding:16px 18px;background:#121212;border:1px solid rgba(255,255,255,.07);border-radius:13px">
+            <span style="flex:none;display:flex;align-items:center;justify-content:center;width:38px;height:38px;background:rgba(155,43,208,.16);color:#C079F0;border-radius:10px"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l7 4v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span>
+            <div><div style="font-weight:800;font-size:15.5px;margin-bottom:2px">Certificado</div><div style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.5">Meta Blueprint, TikTok Academy y Google Skillshop.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAYECTORIA -->
+  <section style="padding:clamp(56px,7vw,104px) clamp(18px,5vw,60px);background:#0c0c0c;border-top:1px solid rgba(255,255,255,.07)">
+    <div style="max-width:860px;margin:0 auto">
+      <div class="reveal" style="margin-bottom:clamp(38px,5vw,56px)">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.16em;color:#FF7A45;margin-bottom:16px">MI TRAYECTORIA</div>
+        <h2 style="font-weight:900;font-size:clamp(28px,4.2vw,52px);line-height:1.02;letter-spacing:-.02em;text-transform:uppercase">El camino hasta aquí</h2>
+      </div>
+      <div style="position:relative;padding-left:4px">
+        <div style="position:absolute;left:19px;top:10px;bottom:10px;width:2px;background:linear-gradient(#FF6A1A,#E0245E,#9B2BD0)"></div>
+        <div class="reveal" style="position:relative;display:flex;gap:22px;margin-bottom:26px">
+          <span style="position:relative;z-index:1;flex:none;width:34px;height:34px;border-radius:50%;background:#0c0c0c;border:2px solid rgba(255,106,44,.5);display:flex;align-items:center;justify-content:center"><span style="width:9px;height:9px;border-radius:50%;background:#FF6A2C"></span></span>
+          <div style="padding-top:3px"><div style="font-size:12px;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.4);margin-bottom:4px">LOS INICIOS</div><div style="font-weight:800;font-size:18px;margin-bottom:5px">IPG Media Brands</div><div style="font-size:14.5px;color:rgba(255,255,255,.62);line-height:1.6;max-width:560px">Mis primeros pasos en una de las redes de medios más grandes del planeta, dominando ad serving, tracking y medición multiplataforma desde la raíz.</div></div>
+        </div>
+        <div class="reveal" style="position:relative;display:flex;gap:22px;margin-bottom:26px">
+          <span style="position:relative;z-index:1;flex:none;width:34px;height:34px;border-radius:50%;background:#0c0c0c;border:2px solid rgba(224,36,94,.5);display:flex;align-items:center;justify-content:center"><span style="width:9px;height:9px;border-radius:50%;background:#E0245E"></span></span>
+          <div style="padding-top:3px"><div style="font-size:12px;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.4);margin-bottom:4px">ESCALANDO</div><div style="font-weight:800;font-size:18px;margin-bottom:5px">Omnicom Media Group</div><div style="font-size:14.5px;color:rgba(255,255,255,.62);line-height:1.6;max-width:560px">Trading programático para portafolios de gran presupuesto. Aquí entendí cómo conectar canales y datos bajo una sola visión de negocio.</div></div>
+        </div>
+        <div class="reveal" style="position:relative;display:flex;gap:22px">
+          <span style="position:relative;z-index:1;flex:none;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#FF6A1A,#9B2BD0);display:flex;align-items:center;justify-content:center;box-shadow:0 0 18px rgba(224,36,94,.5)"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+          <div style="padding-top:3px"><div style="font-size:12px;font-weight:700;letter-spacing:.1em;color:#FF7A45;margin-bottom:4px">LIDERAZGO</div><div style="font-weight:800;font-size:18px;margin-bottom:5px">Havas Media Group</div><div style="font-size:14.5px;color:rgba(255,255,255,.62);line-height:1.6;max-width:560px">Lideré equipos de especialistas en SEM, social y programmatic, dirigiendo estrategias full-funnel para marcas premium. Paid media a su máxima escala.</div></div>
+        </div>
+      </div>
+      <div class="reveal photo-strip" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:clamp(36px,4vw,52px)">
+        <figure style="position:relative;margin:0;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.1);aspect-ratio:4/3;background:#141414">
+          <img src="images/luis-meta.jpg" alt="Luis Aguilar en el headquarter de Meta en Silicon Valley" style="width:100%;height:100%;object-fit:cover;object-position:center 42%;display:block">
+          <figcaption style="position:absolute;left:14px;bottom:12px;font-size:12.5px;font-weight:600;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.7)">Meta HQ · Silicon Valley</figcaption>
+        </figure>
+        <figure style="position:relative;margin:0;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.1);aspect-ratio:4/3;background:#141414">
+          <img src="images/luis-panel.jpg" alt="Luis Aguilar como ponente en las oficinas de Meta México" style="width:100%;height:100%;object-fit:cover;object-position:center 38%;display:block">
+          <figcaption style="position:absolute;left:14px;bottom:12px;font-size:12.5px;font-weight:600;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.7)">Ponente en Meta México · hablando de performance</figcaption>
+        </figure>
+        <figure style="position:relative;margin:0;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.1);aspect-ratio:4/3;background:#141414">
+          <img src="images/luis-connect1.jpg" alt="Luis Aguilar en Meta Connect 2026" style="width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block">
+          <figcaption style="position:absolute;left:14px;bottom:12px;font-size:12.5px;font-weight:600;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.7)">Meta . San Francisco</figcaption>
+        </figure>
+        <figure style="position:relative;margin:0;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.1);aspect-ratio:4/3;background:#141414">
+          <img src="images/luis-connect2.jpg" alt="Luis Aguilar en Meta Connect 2026" style="width:100%;height:100%;object-fit:cover;object-position:center 32%;display:block">
+          <figcaption style="position:absolute;left:14px;bottom:12px;font-size:12.5px;font-weight:600;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.7)">Meta Performance Marketing Summit 2026&nbsp;</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section style="padding:clamp(64px,9vw,140px) clamp(20px,5vw,60px);text-align:center;position:relative">
+    <div class="reveal" style="max-width:980px;margin:0 auto">
+      <div style="font-size:12px;font-weight:700;letter-spacing:.16em;color:#FF7A45;margin-bottom:30px">MI FILOSOFÍA</div>
+      <p style="font-family:'Instrument Serif',serif;font-size:clamp(30px,5.2vw,62px);line-height:1.08;letter-spacing:-.01em">
+        El crecimiento no ocurre por accidente. <span style="font-style:italic;background:linear-gradient(100deg,#FF6A1A,#E0245E 55%,#9B2BD0);-webkit-background-clip:text;background-clip:text;color:transparent">Ocurre por estrategia</span>, datos y una ejecución que no le tiene miedo a medir.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES / QUÉ HAGO -->
+  <section id="servicios" style="padding:clamp(56px,7vw,104px) clamp(18px,5vw,60px);background:#0c0c0c;border-top:1px solid rgba(255,255,255,.07)">
+    <div style="max-width:1280px;margin:0 auto">
+      <div class="reveal" style="max-width:660px;margin-bottom:clamp(38px,5vw,60px)">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.16em;color:#FF7A45;margin-bottom:16px">QUÉ HAGO POR TU MARCA</div>
+        <h2 style="font-weight:900;font-size:clamp(28px,4.2vw,52px);line-height:1.02;letter-spacing:-.02em;text-transform:uppercase">Estrategia, ejecución y optimización en cada canal</h2>
+      </div>
+      <div class="svc-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+        <div class="reveal lift" style="display:flex;flex-direction:column;padding:clamp(24px,2.5vw,32px);background:#121212;border:1px solid rgba(255,255,255,.08);border-radius:18px;min-height:228px">
+          <span style="display:flex;align-items:center;justify-content:center;width:50px;height:50px;border-radius:13px;background:#fff;margin-bottom:auto"><svg width="32" height="22" viewBox="0 0 36 24" fill="none"><path d="M18 12c2.5-4.5 4.5-7 8-7 3.6 0 6 3.1 6 7s-2.4 7-6 7c-3.5 0-5.5-2.5-8-7-2.5-4.5-4.5-7-8-7C6.4 5 4 8.1 4 12s2.4 7 6 7c3.5 0 5.5-2.5 8-7z" stroke="#0866FF" stroke-width="3.4"></path></svg></span>
+          <h3 style="font-weight:800;font-size:20px;letter-spacing:-.01em;margin:24px 0 9px">Meta Ads</h3>
+          <p style="font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.62)">Facebook e Instagram con estructura de cuenta, creatividades y optimización por objetivo de negocio.</p>
+        </div>
+        <div class="reveal lift" style="display:flex;flex-direction:column;padding:clamp(24px,2.5vw,32px);background:#121212;border:1px solid rgba(255,255,255,.08);border-radius:18px;min-height:228px">
+          <span style="display:flex;align-items:center;justify-content:center;width:50px;height:50px;border-radius:13px;background:#fff;margin-bottom:auto"><svg width="30" height="30" viewBox="0 0 48 48"><rect x="20.5" y="5" width="7" height="33" rx="3.5" fill="#FBBC04" transform="rotate(30 24 8.5)"></rect><rect x="20.5" y="5" width="7" height="33" rx="3.5" fill="#4285F4" transform="rotate(-30 24 8.5)"></rect></svg></span>
+          <h3 style="font-weight:800;font-size:20px;letter-spacing:-.01em;margin:24px 0 9px">Google Ads</h3>
+          <p style="font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.62)">Search, Performance Max y display con foco en intención de compra y rentabilidad real.</p>
+        </div>
+        <div class="reveal lift" style="display:flex;flex-direction:column;padding:clamp(24px,2.5vw,32px);background:#121212;border:1px solid rgba(255,255,255,.08);border-radius:18px;min-height:228px">
+          <span style="display:flex;align-items:center;justify-content:center;width:50px;height:50px;border-radius:13px;background:#fff;margin-bottom:auto"><svg width="28" height="28" viewBox="0 0 24 24"><path d="M14.5 3c.4 2.4 1.9 4 4.3 4.2v2.6c-1.4 0-2.7-.4-3.9-1.1v6.2a5.5 5.5 0 1 1-5.5-5.5c.3 0 .6 0 .9.07v2.7a2.8 2.8 0 1 0 2 2.7V3z" fill="#25F4EE" transform="translate(-1.1 .5)"></path><path d="M14.5 3c.4 2.4 1.9 4 4.3 4.2v2.6c-1.4 0-2.7-.4-3.9-1.1v6.2a5.5 5.5 0 1 1-5.5-5.5c.3 0 .6 0 .9.07v2.7a2.8 2.8 0 1 0 2 2.7V3z" fill="#FE2C55" transform="translate(1.1 -.5)"></path><path d="M14.5 3c.4 2.4 1.9 4 4.3 4.2v2.6c-1.4 0-2.7-.4-3.9-1.1v6.2a5.5 5.5 0 1 1-5.5-5.5c.3 0 .6 0 .9.07v2.7a2.8 2.8 0 1 0 2 2.7V3z" fill="#0A0A0A"></path></svg></span>
+          <h3 style="font-weight:800;font-size:20px;letter-spacing:-.01em;margin:24px 0 9px">TikTok Ads</h3>
+          <p style="font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.62)">Adquisición a escala con contenido nativo y testing creativo para audiencias en crecimiento.</p>
+        </div>
+        <div class="reveal flip" data-flip="" style="min-height:228px">
+          <div class="flip-inner" style="min-height:228px">
+            <div class="flip-face flip-front" style="min-height:228px">
+              <span style="display:flex;align-items:center;justify-content:center;width:50px;height:50px;border-radius:13px;background:rgba(255,106,44,.13);color:#FF7A45;margin-bottom:auto"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18"></path><rect x="5" y="11" width="3.5" height="7"></rect><rect x="10.3" y="6" width="3.5" height="12"></rect><rect x="15.6" y="9" width="3.5" height="9"></rect></svg></span>
+              <h3 style="font-weight:800;font-size:20px;letter-spacing:-.01em;margin:24px 0 9px">Medición &amp; Tracking</h3>
+              <p style="font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.62)">Implementación técnica, eventos y atribución para que cada peso invertido sea trazable.</p>
+              <div class="flip-hint"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF7A45" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9"></path><polyline points="3 3 3 8 8 8"></polyline></svg>Toca para ver el detalle</div>
+            </div>
+            <div class="flip-face flip-back" style="min-height:228px;border-color:rgba(255,106,44,.4)">
+              <div style="font-size:11px;font-weight:800;letter-spacing:.1em;color:#FF7A45;margin-bottom:12px">MEDICIÓN &amp; TRACKING</div>
+              <div style="display:flex;flex-direction:column;gap:10px;overflow:auto">
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#FF7A45;font-weight:800">•</span>Píxel de Meta + API de Conversiones bien implementados</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#FF7A45;font-weight:800">•</span>Google Tag Manager (GTM) para disparar y controlar tus eventos</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#FF7A45;font-weight:800">•</span>Google Analytics 4 (GA4): eventos, conversiones y embudos</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#FF7A45;font-weight:800">•</span>Modelo de atribución para tomar decisiones con datos reales</div>
+              </div>
+              <div class="flip-hint"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2"><polyline points="9 14 4 9 9 4"></polyline><path d="M20 20v-7a4 4 0 0 0-4-4H4"></path></svg>Toca para regresar</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal flip" data-flip="" style="min-height:228px">
+          <div class="flip-inner" style="min-height:228px">
+            <div class="flip-face flip-front" style="min-height:228px">
+              <span style="display:flex;align-items:center;justify-content:center;width:50px;height:50px;border-radius:13px;background:rgba(224,36,94,.13);color:#FF5C85;margin-bottom:auto"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="3 17 9 11 13 15 21 7"></polyline><polyline points="15 7 21 7 21 13"></polyline></svg></span>
+              <h3 style="font-weight:800;font-size:20px;letter-spacing:-.01em;margin:24px 0 9px">Optimización avanzada</h3>
+              <p style="font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.62)">Análisis continuo, testing y escalamiento de lo que funciona para maximizar el retorno.</p>
+              <div class="flip-hint"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF5C85" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9"></path><polyline points="3 3 3 8 8 8"></polyline></svg>Toca para ver el detalle</div>
+            </div>
+            <div class="flip-face flip-back" style="min-height:228px;border-color:rgba(224,36,94,.4)">
+              <div style="font-size:11px;font-weight:800;letter-spacing:.1em;color:#FF5C85;margin-bottom:12px">OPTIMIZACIÓN AVANZADA</div>
+              <div style="display:flex;flex-direction:column;gap:10px;overflow:auto">
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#FF5C85;font-weight:800">•</span>Pujas de Meta por ROAS objetivo (tROAS) para máxima rentabilidad</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#FF5C85;font-weight:800">•</span>Límite de costo y CPA objetivo según tu margen</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#FF5C85;font-weight:800">•</span>Optimización por valor (value optimization) y Advantage+</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#FF5C85;font-weight:800">•</span>Testing A/B y escalamiento de lo que sí funciona</div>
+              </div>
+              <div class="flip-hint"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2"><polyline points="9 14 4 9 9 4"></polyline><path d="M20 20v-7a4 4 0 0 0-4-4H4"></path></svg>Toca para regresar</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal flip" data-flip="" style="min-height:228px">
+          <div class="flip-inner" style="min-height:228px">
+            <div class="flip-face flip-front" style="min-height:228px">
+              <span style="display:flex;align-items:center;justify-content:center;width:50px;height:50px;border-radius:13px;background:rgba(155,43,208,.16);color:#C079F0;margin-bottom:auto"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4.5"></circle><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"></circle></svg></span>
+              <h3 style="font-weight:800;font-size:20px;letter-spacing:-.01em;margin:24px 0 9px">Estrategia de growth</h3>
+              <p style="font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.62)">Plan integral multicanal alineado a tus objetivos: leads, ventas o posicionamiento.</p>
+              <div class="flip-hint"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C079F0" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9"></path><polyline points="3 3 3 8 8 8"></polyline></svg>Toca para ver el detalle</div>
+            </div>
+            <div class="flip-face flip-back" style="min-height:228px;border-color:rgba(155,43,208,.4)">
+              <div style="font-size:11px;font-weight:800;letter-spacing:.1em;color:#C079F0;margin-bottom:12px">ESTRATEGIA DE GROWTH</div>
+              <div style="display:flex;flex-direction:column;gap:10px;overflow:auto">
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#C079F0;font-weight:800">•</span>Diagnóstico de objetivos y mapeo del embudo (awareness → conversión)</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#C079F0;font-weight:800">•</span>Construcción de un plan de medios ideal por canal y etapa</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#C079F0;font-weight:800">•</span>Distribución de presupuesto y proyección de resultados</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#C079F0;font-weight:800">•</span>Calendario, mensajes y KPIs claros por cada fase</div>
+              </div>
+              <div class="flip-hint"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2"><polyline points="9 14 4 9 9 4"></polyline><path d="M20 20v-7a4 4 0 0 0-4-4H4"></path></svg>Toca para regresar</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certs" style="padding:clamp(56px,7vw,104px) clamp(18px,5vw,60px);background:#000">
+    <div style="max-width:1280px;margin:0 auto">
+      <div class="reveal" style="text-align:center;max-width:640px;margin:0 auto clamp(40px,5vw,58px)">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.16em;color:#FF7A45;margin-bottom:16px">RESPALDO OFICIAL</div>
+        <h2 style="font-weight:900;font-size:clamp(28px,4vw,48px);line-height:1.04;letter-spacing:-.02em;text-transform:uppercase">Mis certificaciones</h2>
+        <p style="font-size:16px;color:rgba(255,255,255,.6);margin-top:18px;line-height:1.6">Acreditado directamente por las plataformas líderes de paid media. Sin atajos.</p>
+      </div>
+      <div class="certs-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(16px,2.5vw,32px);align-items:end;justify-items:center;max-width:980px;margin:0 auto">
+        <div class="reveal" style="display:flex;flex-direction:column;align-items:center"><img src="images/certs/meta-buying.png" alt="Meta Media Buying Professional" style="width:100%;max-width:128px;height:auto;display:block"></div>
+        <div class="reveal" style="display:flex;flex-direction:column;align-items:center"><img src="images/certs/meta-planning.png" alt="Meta Media Planning Professional" style="width:100%;max-width:128px;height:auto;display:block"></div>
+        <div class="reveal" style="display:flex;flex-direction:column;align-items:center"><img src="images/certs/tiktok-buying.png" alt="TikTok Media Buying Professional" style="width:100%;max-width:118px;height:auto;display:block"></div>
+        <div class="reveal" style="display:flex;flex-direction:column;align-items:center"><img src="images/certs/meta-measurement.png" alt="Meta Media Measurement Specialist" style="width:100%;max-width:112px;height:auto;display:block"></div>
+        <div class="reveal" style="display:flex;flex-direction:column;align-items:center"><img src="images/certs/meta-technical.png" alt="Meta Technical Implementation Specialist" style="width:100%;max-width:112px;height:auto;display:block"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonios" style="padding:clamp(56px,7vw,104px) clamp(18px,5vw,60px);max-width:1280px;margin:0 auto">
+    <div class="reveal" style="text-align:center;max-width:660px;margin:0 auto clamp(38px,5vw,58px)">
+      <div style="font-size:12px;font-weight:700;letter-spacing:.16em;color:#FF7A45;margin-bottom:16px">LO QUE DICEN DE MÍ</div>
+      <h2 style="font-weight:900;font-size:clamp(28px,4.2vw,52px);line-height:1.02;letter-spacing:-.02em;text-transform:uppercase">Resultados que hablan</h2>
+    </div>
+    <div class="tst-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch">
+        <!-- COMENTARIO FACEBOOK -->
+        <div class="reveal" style="display:flex;flex-direction:column;padding:16px;border-radius:14px;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.18)">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:13px">
+            <div style="display:flex;align-items:center;gap:9px">
+              <span style="font-weight:800;font-size:19px;color:#1877F2;font-family:Georgia,serif;letter-spacing:-.04em">facebook</span>
+            </div>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12a12 12 0 10-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.6 4.5-4.6 1.3 0 2.6.2 2.6.2v2.9h-1.5c-1.4 0-1.9.9-1.9 1.8V12h3.3l-.5 3.5h-2.8v8.4A12 12 0 0024 12z"></path></svg>
+          </div>
+          <div style="display:flex;gap:10px">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="María Restrepo" style="flex:none;width:40px;height:40px;border-radius:50%;object-fit:cover">
+            <div style="flex:1;min-width:0">
+              <div style="background:#f0f2f5;border-radius:16px;padding:9px 14px;position:relative;margin-bottom:10px">
+                <div style="display:flex;align-items:center;gap:5px;margin-bottom:2px"><span style="font-weight:700;font-size:13.5px;color:#050505">María Restrepo</span><svg width="13" height="13" viewBox="0 0 24 24" fill="#1877F2"><circle cx="12" cy="12" r="10"></circle><path d="M9 12.5l2 2 4-4.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+                <p style="font-size:14px;line-height:1.5;color:#050505">Luis transformó por completo nuestras campañas 🙌 Pasamos de gastar sin saber a tener un ROAS claro y creciente cada mes. 100% recomendado.</p>
+                <div style="position:absolute;right:10px;bottom:-10px;display:flex;align-items:center;gap:2px;background:#fff;border-radius:100px;padding:2px 6px;box-shadow:0 1px 5px rgba(0,0,0,.2)">
+                  <span style="display:flex;width:17px;height:17px;align-items:center;justify-content:center;border-radius:50%;background:#1877F2;font-size:9px">👍</span>
+                  <span style="display:flex;width:17px;height:17px;align-items:center;justify-content:center;border-radius:50%;background:#F33E58;margin-left:-5px;font-size:9px">❤️</span>
+                  <span style="font-size:12px;color:#65676b;font-weight:600;margin-left:2px">47</span>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:14px;padding-left:4px;font-size:12.5px;font-weight:700;color:#65676b">
+                <span>Me gusta</span><span>Responder</span><span style="font-weight:500">2 sem</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- TESTIMONIAL CLÁSICO -->
+        <div class="reveal lift" style="display:flex;flex-direction:column;padding:clamp(24px,2.5vw,30px);border-radius:16px;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.18);position:relative">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="#FF6A2C" style="opacity:.16;position:absolute;top:20px;right:22px"><path d="M9 7H5a2 2 0 00-2 2v4a2 2 0 002 2h2v2a2 2 0 01-2 2H4v2h1a4 4 0 004-4V9a2 2 0 00-2-2zm10 0h-4a2 2 0 00-2 2v4a2 2 0 002 2h2v2a2 2 0 01-2 2h-1v2h1a4 4 0 004-4V9a2 2 0 00-2-2z"></path></svg>
+          <div style="display:flex;gap:3px;margin-bottom:16px">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l2.9 6.3L21 9l-5 4.3 1.4 6.7L12 16.5 6.6 20 8 13.3 3 9l6.1-.7z"></path></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l2.9 6.3L21 9l-5 4.3 1.4 6.7L12 16.5 6.6 20 8 13.3 3 9l6.1-.7z"></path></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l2.9 6.3L21 9l-5 4.3 1.4 6.7L12 16.5 6.6 20 8 13.3 3 9l6.1-.7z"></path></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l2.9 6.3L21 9l-5 4.3 1.4 6.7L12 16.5 6.6 20 8 13.3 3 9l6.1-.7z"></path></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l2.9 6.3L21 9l-5 4.3 1.4 6.7L12 16.5 6.6 20 8 13.3 3 9l6.1-.7z"></path></svg>
+          </div>
+          <p style="font-size:15.5px;line-height:1.65;color:#1a1a1a;margin-bottom:auto;font-weight:500">"Por fin entendí mis números. El método de Luis es directo, sin humo, y los resultados se vieron desde el primer mes. La mejor inversión para mi negocio."</p>
+          <div style="display:flex;align-items:center;gap:12px;margin-top:22px;padding-top:18px;border-top:1px solid #eee">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Juan Carlos Díaz" style="flex:none;width:48px;height:48px;border-radius:50%;object-fit:cover">
+            <div><div style="font-weight:800;font-size:15px;color:#111">Juan Carlos Díaz</div><div style="font-size:12.5px;color:#777">Marca automotriz</div></div>
+          </div>
+        </div>
+        <!-- COMENTARIO INSTAGRAM -->
+        <div class="reveal" style="display:flex;flex-direction:column;padding:16px;border-radius:14px;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.18)">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid #efefef">
+            <div style="display:flex;align-items:center;gap:9px">
+              <span style="flex:none;display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:linear-gradient(45deg,#FEDA75,#FA7E1E 30%,#D62976 55%,#962FBF 75%,#4F5BD5)"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Andrea López" style="width:37px;height:37px;border-radius:50%;object-fit:cover;border:2px solid #fff"></span>
+              <div>
+                <div style="display:flex;align-items:center;gap:5px"><span style="font-weight:600;font-size:14px;color:#262626">andrealopez.mkt</span><svg width="13" height="13" viewBox="0 0 24 24" fill="#3897F0"><circle cx="12" cy="12" r="10"></circle><path d="M9 12.5l2 2 4-4.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+                <div style="font-size:11.5px;color:#8e8e8e">Original audio</div>
+              </div>
+            </div>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="igc" x1="0" y1="24" x2="24" y2="0"><stop offset="0" stop-color="#FEDA75"></stop><stop offset=".35" stop-color="#FA7E1E"></stop><stop offset=".6" stop-color="#D62976"></stop><stop offset=".8" stop-color="#962FBF"></stop><stop offset="1" stop-color="#4F5BD5"></stop></linearGradient></defs><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="url(#igc)" stroke-width="2"></rect><circle cx="12" cy="12" r="4.3" stroke="url(#igc)" stroke-width="2"></circle><circle cx="17.2" cy="6.8" r="1.4" fill="url(#igc)"></circle></svg>
+          </div>
+          <p style="font-size:14px;line-height:1.55;color:#262626;margin-bottom:14px"><span style="font-weight:600">andrealopez.mkt</span> El curso de Meta Ads vale cada centavo 💯 Hoy gestiono mis propias campañas con total confianza y rentabilidad. ¡Gracias Luis! 🔥</p>
+          <div style="display:flex;align-items:center;gap:18px">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#ED4956"><path d="M12 21s-7.5-4.6-10-9.3C.3 8.2 2 5 5.2 5c2 0 3.3 1.1 4.1 2.3l.8 1.2.8-1.2C11.7 6.1 13 5 15 5c3.2 0 4.9 3.2 3.2 6.7C19.5 16.4 12 21 12 21z"></path></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8"><path d="M21 11.5a8.4 8.4 0 01-9 8.4 8.6 8.6 0 01-3.8-.8L3 20.5l1.5-4.2A8.4 8.4 0 1121 11.5z"></path></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#262626" stroke-width="1.8"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"></path></svg>
+            <span style="margin-left:auto;font-size:13px;color:#262626;font-weight:600">128 Me gusta</span>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- CURSO META ADS -->
+  <section id="curso" style="position:relative;padding:clamp(60px,8vw,120px) clamp(18px,5vw,60px);background:#000;border-top:1px solid rgba(255,255,255,.07);overflow:hidden">
+    <div style="position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:840px;height:520px;background:radial-gradient(circle,rgba(255,106,26,.16),rgba(224,36,94,.1) 45%,transparent 72%);pointer-events:none"></div>
+    <div style="position:relative;max-width:1280px;margin:0 auto">
+      <div class="reveal" style="text-align:center;max-width:780px;margin:0 auto clamp(40px,5vw,60px)">
+        <div style="display:inline-flex;align-items:center;gap:9px;background:rgba(255,106,44,.12);border:1px solid rgba(255,106,44,.3);color:#FF7A45;padding:7px 16px;border-radius:100px;font-size:12px;font-weight:700;letter-spacing:.08em;margin-bottom:24px">
+          <span style="display:flex;align-items:center;justify-content:center;width:18px;height:18px;background:#fff;border-radius:4px"><svg width="13" height="9" viewBox="0 0 36 24" fill="none"><path d="M18 12c2.5-4.5 4.5-7 8-7 3.6 0 6 3.1 6 7s-2.4 7-6 7c-3.5 0-5.5-2.5-8-7-2.5-4.5-4.5-7-8-7C6.4 5 4 8.1 4 12s2.4 7 6 7c3.5 0 5.5-2.5 8-7z" stroke="#0866FF" stroke-width="4"></path></svg></span>
+          CURSO EN VIVO DE META ADS
+        </div>
+        <h2 style="font-weight:900;font-size:clamp(30px,5vw,62px);line-height:1;letter-spacing:-.025em;text-transform:uppercase;margin-bottom:22px">DE CERO A EXPERTO EN&nbsp;&nbsp;<span style="background: linear-gradient(100deg, rgb(255, 106, 26), rgb(224, 36, 94) 55%, rgb(155, 43, 208)) text; color: #2b16f367">META ADS</span></h2>
+        <p style="font-size:clamp(16px,1.6vw,19px);color:rgba(255,255,255,.66);line-height:1.6">En <strong style="color:#fff">3 sesiones en vivo</strong> te llevo de la mano para crear y poner a correr tus propias campañas de Meta Ads. Fácil, sin tecnicismos y aplicándolo en tiempo real conmigo.</p>
+      </div>
+
+      <!-- PARA QUIÉN -->
+      <div class="reveal" style="max-width:1000px;margin:0 auto clamp(36px,4vw,52px)">
+        <div style="text-align:center;font-size:12px;font-weight:700;letter-spacing:.14em;color:rgba(255,255,255,.5);margin-bottom:22px">¿PARA QUIÉN ES ESTE CURSO?</div>
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
+          <div style="display:flex;align-items:center;gap:9px;background:#121212;border:1px solid rgba(255,255,255,.1);padding:11px 18px;border-radius:100px;font-size:14px;font-weight:600"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF7A45" stroke-width="2.8" style="flex: none; margin-top: 2px; stroke: #03ed5c"><polyline points="20 6 9 17 4 12"></polyline></svg> Emprendedores y dueños de negocio</div>
+          <div style="display:flex;align-items:center;gap:9px;background:#121212;border:1px solid rgba(255,255,255,.1);padding:11px 18px;border-radius:100px;font-size:14px;font-weight:600"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF7A45" stroke-width="2.8" style="flex: none; margin-top: 2px; stroke: #03ed5c"><polyline points="20 6 9 17 4 12"></polyline></svg> Freelancers y community managers</div>
+          <div style="display:flex;align-items:center;gap:9px;background:#121212;border:1px solid rgba(255,255,255,.1);padding:11px 18px;border-radius:100px;font-size:14px;font-weight:600"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF7A45" stroke-width="2.8" style="flex: none; margin-top: 2px; stroke: #03ed5c"><polyline points="20 6 9 17 4 12"></polyline></svg> Quien quiere dejar de tirar dinero en anuncios</div>
+          <div style="display: flex; align-items: center; gap: 9px; background: #121212; border: 1px solid rgba(255,255,255,.1); padding: 11px 18px; border-radius: 100px; font-size: 14px; font-weight: 600; position: relative"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF7A45" stroke-width="2.8" style="flex: none; margin-top: 2px; stroke: #03ed5c"><polyline points="20 6 9 17 4 12"></polyline></svg> Principiantes total — empezamos en cero</div>
+        </div>
+      </div>
+
+      <!-- 3 SESIONES -->
+      <div class="reveal" style="text-align:center;font-size:12px;font-weight:700;letter-spacing:.14em;color:rgba(255,255,255,.5);margin-bottom:22px">QUÉ VEREMOS · 3 SESIONES EN VIVO DE 1.5 H</div>
+      <div class="sess-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:clamp(40px,5vw,60px)">
+        <div class="reveal flip" data-flip="">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+                <span style="display:inline-flex;align-items:center;gap:7px;background:rgba(255,106,44,.13);color:#FF7A45;font-size:12px;font-weight:800;letter-spacing:.04em;padding:6px 12px;border-radius:100px">SESIÓN 1 · 1.5 H</span>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="1.6"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+              </div>
+              <h3 style="font-weight:800;font-size:18.5px;margin-bottom:14px;letter-spacing:-.01em">Tu base lista para vender</h3>
+              <div style="display:flex;flex-direction:column;gap:9px">
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:14px;color:rgba(255,255,255,.7);line-height:1.45"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF7A45" stroke-width="2.8" style="flex:none;margin-top:2px"><polyline points="20 6 9 17 4 12"></polyline></svg>Crear tu cuenta y tu Business Manager</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:14px;color:rgba(255,255,255,.7);line-height:1.45"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF7A45" stroke-width="2.8" style="flex:none;margin-top:2px"><polyline points="20 6 9 17 4 12"></polyline></svg>Configurar tu tarjeta y medios de pago</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:14px;color:rgba(255,255,255,.7);line-height:1.45"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF7A45" stroke-width="2.8" style="flex:none;margin-top:2px"><polyline points="20 6 9 17 4 12"></polyline></svg>Conectar tu página y el píxel de seguimiento</div>
+              </div>
+              <div class="flip-hint"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF7A45" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9"></path><polyline points="3 3 3 8 8 8"></polyline></svg>Toca para ver el detalle</div>
+            </div>
+            <div class="flip-face flip-back" style="border-color:rgba(255,106,44,.4)">
+              <div style="font-size:11px;font-weight:800;letter-spacing:.1em;color:#FF7A45;margin-bottom:12px">SESIÓN 1 · A DETALLE</div>
+              <div style="display:flex;flex-direction:column;gap:11px;overflow:auto">
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#FF7A45;font-weight:800">01</span>Crear tu cuenta de Meta Business Manager paso a paso</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#FF7A45;font-weight:800">02</span>Configurar tu cuenta publicitaria, roles y permisos de equipo</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#FF7A45;font-weight:800">03</span>Agregar tu tarjeta y configurar el umbral de facturación</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#FF7A45;font-weight:800">04</span>Crear e instalar el Píxel de Meta + API de Conversiones</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#FF7A45;font-weight:800">05</span>Integrar el Píxel con Google Tag Manager (GTM)</div>
+              </div>
+              <div class="flip-hint"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2"><polyline points="9 14 4 9 9 4"></polyline><path d="M20 20v-7a4 4 0 0 0-4-4H4"></path></svg>Toca para regresar</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal flip" data-flip="">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+                <span style="display:inline-flex;align-items:center;gap:7px;background:rgba(224,36,94,.13);color:#FF5C85;font-size:12px;font-weight:800;letter-spacing:.04em;padding:6px 12px;border-radius:100px">SESIÓN 2 · 1.5 H</span>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="1.6"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4"></circle></svg>
+              </div>
+              <h3 style="font-weight:800;font-size:18.5px;margin-bottom:14px;letter-spacing:-.01em">Tu primera campaña en vivo</h3>
+              <div style="display:flex;flex-direction:column;gap:9px">
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:14px;color:rgba(255,255,255,.7);line-height:1.45"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF5C85" stroke-width="2.8" style="flex:none;margin-top:2px"><polyline points="20 6 9 17 4 12"></polyline></svg>Elegir el objetivo correcto para tu meta</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:14px;color:rgba(255,255,255,.7);line-height:1.45"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF5C85" stroke-width="2.8" style="flex:none;margin-top:2px"><polyline points="20 6 9 17 4 12"></polyline></svg>Crear campaña, conjunto y anuncio paso a paso</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:14px;color:rgba(255,255,255,.7);line-height:1.45"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF5C85" stroke-width="2.8" style="flex:none;margin-top:2px"><polyline points="20 6 9 17 4 12"></polyline></svg>Definir públicos, presupuesto y segmentación</div>
+              </div>
+              <div class="flip-hint"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF5C85" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9"></path><polyline points="3 3 3 8 8 8"></polyline></svg>Toca para ver el detalle</div>
+            </div>
+            <div class="flip-face flip-back" style="border-color:rgba(224,36,94,.4)">
+              <div style="font-size:11px;font-weight:800;letter-spacing:.1em;color:#FF5C85;margin-bottom:12px">SESIÓN 2 · A DETALLE</div>
+              <div style="display:flex;flex-direction:column;gap:11px;overflow:auto">
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#FF5C85;font-weight:800">01</span>Elegir el objetivo real: ventas, leads o tráfico</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#FF5C85;font-weight:800">02</span>Estructura correcta: campaña → conjunto → anuncio</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#FF5C85;font-weight:800">03</span>Presupuesto (CBO vs ABO) y estrategia de puja</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#FF5C85;font-weight:800">04</span>Públicos guardados, personalizados y similares (lookalike)</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#FF5C85;font-weight:800">05</span>Diseñar el anuncio: copy, creativo y llamado a la acción</div>
+              </div>
+              <div class="flip-hint"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2"><polyline points="9 14 4 9 9 4"></polyline><path d="M20 20v-7a4 4 0 0 0-4-4H4"></path></svg>Toca para regresar</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal flip" data-flip="">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+                <span style="display:inline-flex;align-items:center;gap:7px;background:rgba(155,43,208,.16);color:#C079F0;font-size:12px;font-weight:800;letter-spacing:.04em;padding:6px 12px;border-radius:100px">SESIÓN 3 · 1.5 H</span>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="1.6"><polyline points="3 17 9 11 13 15 21 7"></polyline><polyline points="15 7 21 7 21 13"></polyline></svg>
+              </div>
+              <h3 style="font-weight:800;font-size:18.5px;margin-bottom:14px;letter-spacing:-.01em">Leer resultados y optimizar</h3>
+              <div style="display:flex;flex-direction:column;gap:9px">
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:14px;color:rgba(255,255,255,.7);line-height:1.45"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C079F0" stroke-width="2.8" style="flex:none;margin-top:2px"><polyline points="20 6 9 17 4 12"></polyline></svg>Entender las métricas que de verdad importan</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:14px;color:rgba(255,255,255,.7);line-height:1.45"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C079F0" stroke-width="2.8" style="flex:none;margin-top:2px"><polyline points="20 6 9 17 4 12"></polyline></svg>Saber cuándo apagar, ajustar o escalar</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:14px;color:rgba(255,255,255,.7);line-height:1.45"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C079F0" stroke-width="2.8" style="flex:none;margin-top:2px"><polyline points="20 6 9 17 4 12"></polyline></svg>Resolver tus dudas en vivo con tus campañas reales</div>
+              </div>
+              <div class="flip-hint"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C079F0" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9"></path><polyline points="3 3 3 8 8 8"></polyline></svg>Toca para ver el detalle</div>
+            </div>
+            <div class="flip-face flip-back" style="border-color:rgba(155,43,208,.4)">
+              <div style="font-size:11px;font-weight:800;letter-spacing:.1em;color:#C079F0;margin-bottom:12px">SESIÓN 3 · A DETALLE</div>
+              <div style="display:flex;flex-direction:column;gap:11px;overflow:auto">
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#C079F0;font-weight:800">01</span>Leer el Administrador de anuncios: ROAS, CPA, CTR y frecuencia</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#C079F0;font-weight:800">02</span>Columnas personalizadas y desglose por edad, género y ubicación</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#C079F0;font-weight:800">03</span>Cuándo apagar, duplicar o escalar (vertical y horizontal)</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#C079F0;font-weight:800">04</span>Pruebas A/B de creativos y públicos para mejorar resultados</div>
+                <div style="display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.5"><span style="color:#C079F0;font-weight:800">05</span>Resolución de dudas en vivo con tus propias campañas</div>
+              </div>
+              <div class="flip-hint"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2"><polyline points="9 14 4 9 9 4"></polyline><path d="M20 20v-7a4 4 0 0 0-4-4H4"></path></svg>Toca para regresar</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRICING -->
+      <div class="course-grid" style="display:grid;grid-template-columns:1fr .85fr;gap:clamp(28px,3.5vw,48px);align-items:center;max-width:1040px;margin:0 auto">
+        <div class="reveal">
+          <h3 style="font-weight:800;font-size:clamp(22px,2.6vw,30px);letter-spacing:-.01em;margin-bottom:20px">Todo lo que incluye tu lugar</h3>
+          <div style="display:flex;flex-direction:column;gap:13px">
+            <div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:none;display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#FF6A1A,#9B2BD0);color:#fff"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div><div style="font-weight:700;font-size:15.5px">3 sesiones en vivo de 1.5 h</div><div style="font-size:13.5px;color:rgba(255,255,255,.55);line-height:1.5">Conmigo, en grupos reducidos y aplicándolo en tiempo real.</div></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:none;display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#FF6A1A,#9B2BD0);color:#fff"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div><div style="font-weight:700;font-size:15.5px">Grabación de cada sesión</div><div style="font-size:13.5px;color:rgba(255,255,255,.55);line-height:1.5">Repásalo cuando quieras, a tu ritmo.</div></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:none;display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#FF6A1A,#9B2BD0);color:#fff"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div><div style="font-weight:700;font-size:15.5px">Plantillas y checklist descargables</div><div style="font-size:13.5px;color:rgba(255,255,255,.55);line-height:1.5">Para que no se te escape ningún paso.</div></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:none;display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#FF6A1A,#9B2BD0);color:#fff"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div><div style="font-weight:700;font-size:15.5px">Resolución de dudas en vivo</div><div style="font-size:13.5px;color:rgba(255,255,255,.55);line-height:1.5">Pregunta todo durante las sesiones.</div></div></div>
+          </div>
+        </div>
+        <div class="reveal" style="position:relative;padding:clamp(28px,3vw,38px);background:linear-gradient(160deg,#1a0f14,#100a14);border:1.5px solid rgba(255,106,44,.5);border-radius:22px;box-shadow:0 24px 70px rgba(224,36,94,.14)">
+          <span style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#FF6A1A,#E0245E 60%,#9B2BD0);color:#fff;font-size:11px;font-weight:800;letter-spacing:.06em;padding:5px 14px;border-radius:100px;white-space:nowrap">CUPOS LIMITADOS</span>
+          <div style="text-align:center">
+            <div style="display:flex;align-items:center;justify-content:center;gap:8px;font-weight:800;font-size:18px;margin-bottom:4px"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#FF5C85" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="2.5" fill="#FF5C85" stroke="none"></circle><path d="M7.5 7.5a6 6 0 0 0 0 9M16.5 7.5a6 6 0 0 1 0 9"></path><path d="M4.5 4.5a10 10 0 0 0 0 15M19.5 4.5a10 10 0 0 1 0 15"></path></svg>Curso en vivo · Meta Ads</div>
+            <div style="font-size:13.5px;color:rgba(255,255,255,.55);margin-bottom:18px">Pago único · acceso completo</div>
+            <div style="display:flex;align-items:baseline;gap:9px;justify-content:center;margin-bottom:6px">
+              <span style="font-weight:900;font-size:46px;letter-spacing:-.03em;background:linear-gradient(120deg,#FF6A1A,#E0245E 60%,#9B2BD0);-webkit-background-clip:text;background-clip:text;color:transparent">$1,790</span>
+              <span style="font-size:14px;color:rgba(255,255,255,.45);text-decoration:line-through">$2,490</span>
+            </div>
+            <div style="font-size:12.5px;color:rgba(255,255,255,.45);margin-bottom:24px">MXN · o a meses sin intereses</div>
+            <a href="{{ courseLink }}" target="_blank" class="btn-grad" style="display:flex;align-items:center;justify-content:center;gap:9px;background:linear-gradient(135deg,#FF6A1A,#E0245E 60%,#9B2BD0);color:#fff;padding:17px;border-radius:100px;font-weight:800;font-size:16px;margin-bottom:14px">Inscribirme ahora →</a>
+            <div style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap">
+              <span style="display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:7px 12px;border-radius:100px;font-size:11.5px;font-weight:600;color:rgba(255,255,255,.72)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 2.5l7.5 3v5.2c0 4.6-3.2 8.2-7.5 9.8-4.3-1.6-7.5-5.2-7.5-9.8V5.5z" fill="url(#payg)"></path><path d="M8.6 12l2.3 2.3 4.4-4.6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path><defs><linearGradient id="payg" x1="4" y1="2" x2="20" y2="22"><stop offset="0" stop-color="#FF6A1A"></stop><stop offset=".55" stop-color="#E0245E"></stop><stop offset="1" stop-color="#9B2BD0"></stop></linearGradient></defs></svg>
+                Pago 100% seguro
+              </span>
+              <span style="display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:7px 12px;border-radius:100px;font-size:11.5px;font-weight:600;color:rgba(255,255,255,.72)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 1.7 2.9-.2 1 2.7 2.4 1.6-.6 2.9.6 2.9-2.4 1.6-1 2.7-2.9-.2L12 22l-2.4-1.7-2.9.2-1-2.7L3.3 16l.6-2.9-.6-2.9L5.7 8.6l1-2.7 2.9.2z" fill="url(#payg)"></path><path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path></svg>
+                Garantía 7 días
+              </span>
+              <span style="display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:7px 12px;border-radius:100px;font-size:11.5px;font-weight:600;color:rgba(255,255,255,.72)">
+                <svg width="15" height="15" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="6" fill="#F04E23"></rect><path d="M9 17V8.5c0-1.8 1.3-3 3-3 1.6 0 2.8 1 2.8 2.6 0 1.7-1.3 2.7-3 2.7" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round"></path></svg>
+                Pago seguro vía Hotmart
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASESORÍA 1:1 + FORM -->
+  <section id="asesoria" style="position:relative;padding:clamp(60px,8vw,116px) clamp(18px,5vw,60px);border-top:1px solid rgba(255,255,255,.07);overflow:hidden">
+    <div style="position:absolute;bottom:-160px;right:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(155,43,208,.16),rgba(224,36,94,.08) 50%,transparent 72%);pointer-events:none"></div>
+    <div class="adv-grid" style="position:relative;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,4.5vw,64px);align-items:center">
+      <div class="reveal">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.16em;color:#FF7A45;margin-bottom:16px">ASESORÍA 1:1</div>
+        <h2 style="font-weight:900;font-size:clamp(28px,4.2vw,50px);line-height:1.02;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:20px">¿Prefieres trabajar conmigo directo?</h2>
+        <p style="font-size:clamp(15px,1.5vw,17.5px);line-height:1.7;color:rgba(255,255,255,.7);margin-bottom:26px">Sesión personalizada para revisar tus campañas, resolver tus dudas y trazar tu estrategia de paid media. Déjame tus datos y te contacto para agendar.</p>
+        <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:8px">
+          <span style="font-weight:900;font-size:clamp(34px,4vw,46px);letter-spacing:-.03em;background:linear-gradient(120deg,#FF6A1A,#E0245E 60%,#9B2BD0);-webkit-background-clip:text;background-clip:text;color:transparent">$2,000</span>
+          <span style="font-size:16px;font-weight:600;color:rgba(255,255,255,.6)">MXN / hora y media</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:18px;margin-top:24px">
+          <div style="display: flex; align-items: center; gap: 9px; font-size: 14px; color: rgba(255,255,255,.7); position: static"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FF7A45" stroke-width="1.8"><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 14"></polyline></svg>Sesión en vivo 1 hora</div>
+          <div style="display:flex;align-items:center;gap:9px;font-size:14px;color:rgba(255,255,255,.7)"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FF7A45" stroke-width="1.8"><path d="M12 2l7 4v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6z"></path></svg>100% personalizada</div>
+        </div>
+      </div>
+      <div class="reveal" style="background:#121212;border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:clamp(24px,3vw,36px)">
+        <form action="{{ formAction }}" method="POST" style="display:flex;flex-direction:column;gap:13px">
+          <input type="hidden" name="_subject" value="Nueva solicitud de asesoría 1:1 — Landing Luis Aguilar">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" style="display:none">
+          <div>
+            <label style="display:block;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.55);margin-bottom:7px">Nombre completo</label>
+            <input class="fld" type="text" name="Nombre" required="" placeholder="Tu nombre">
+          </div>
+          <div>
+            <label style="display:block;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.55);margin-bottom:7px">Correo electrónico</label>
+            <input class="fld" type="email" name="Correo" required="" placeholder="tu@correo.com">
+          </div>
+          <div>
+            <label style="display:block;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.55);margin-bottom:7px">WhatsApp</label>
+            <input class="fld" type="tel" name="WhatsApp" required="" placeholder="+52 ...">
+          </div>
+          <div>
+            <label style="display:block;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.55);margin-bottom:7px">¿En qué te ayudo?</label>
+            <textarea class="fld" name="Mensaje" rows="3" placeholder="Cuéntame brevemente tu negocio y tu objetivo" style="resize:vertical"></textarea>
+          </div>
+          <button type="submit" class="btn-grad" style="display:flex;align-items:center;justify-content:center;gap:9px;background:linear-gradient(135deg,#FF6A1A,#E0245E 60%,#9B2BD0);color:#fff;border:none;cursor:pointer;padding:16px;border-radius:100px;font-weight:800;font-size:15.5px;margin-top:4px">Quiero mi asesoría 1:1 →</button>
+          <p style="font-size:11.5px;color:rgba(255,255,255,.4);text-align:center;line-height:1.5">Tus datos llegan directo a mi correo. Te respondo en menos de 24 h.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="border-top:1px solid rgba(255,255,255,.07);padding:clamp(40px,4vw,60px) clamp(18px,5vw,60px);background:#000">
+    <div style="max-width:1280px;margin:0 auto">
+      <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.07)">
+        <div style="max-width:420px">
+          <a href="#top" style="display:flex;align-items:center;gap:11px;font-weight:900;font-size:18px;margin-bottom:12px">Luis Aguilar</a>
+          <p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.6">Especialista en marketing digital y paid media. Hagamos crecer tu marca con datos, no con promesas.</p>
+        </div>
+        <a href="{{ waLink  }}" target="_blank" class="btn-wa" style="display: flex; align-items: center; gap: 10px; background: #25D366; color: #06240F; padding: 15px 26px; border-radius: 100px; font-weight: 800; font-size: 15px">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="#06240F"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.57-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"></path><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.42 1.27 4.86L2 22l5.25-1.38A9.93 9.93 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.6 0-3.09-.47-4.34-1.27l-.31-.2-3.12.82.83-3.04-.2-.32A7.93 7.93 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"></path></svg>
+          Hablemos por WhatsApp
+        </a>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;padding-top:24px">
+        <div style="display:flex;gap:18px;align-items:center">
+          <a href="{{ igLink }}" target="_blank" aria-label="Instagram" class="soc-ic" style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:11px;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.85)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" stroke="none"></circle></svg>
+          </a>
+          <a href="{{ ttLink }}" target="_blank" aria-label="TikTok" class="soc-ic" style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:11px;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.85)">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 2h-3v13.2a2.6 2.6 0 1 1-2.2-2.57v-3.05a5.66 5.66 0 1 0 5.2 5.64V8.9a6.9 6.9 0 0 0 4 1.28V7.1a4 4 0 0 1-2.86-1.2A4 4 0 0 1 16.5 2.9z"></path></svg>
+          </a>
+          <a href="{{ liLink }}" target="_blank" aria-label="LinkedIn" class="soc-ic" style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:11px;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.85)">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"></path></svg>
+          </a>
+        </div>
+        <div style="font-size:13px;color:rgba(255,255,255,.38)">© {{ year }} Luis Aguilar · Marketing Digital &amp; Paid Media</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="{{ waLink }}" target="_blank" aria-label="WhatsApp" class="wa-float" style="position:fixed;z-index:90;right:clamp(16px,3vw,28px);bottom:clamp(16px,3vw,28px);display:flex;align-items:center;justify-content:center;width:60px;height:60px;background:#25D366;border-radius:50%;box-shadow:0 12px 34px rgba(37,211,102,.4)">
+    <span style="position:absolute;inset:0;border-radius:50%;background:#25D366;animation:ring 2.4s ease-out infinite;z-index:-1"></span>
+    <svg width="33" height="33" viewBox="0 0 24 24" fill="#fff"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.57-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"></path><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.42 1.27 4.86L2 22l5.25-1.38A9.93 9.93 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.6 0-3.09-.47-4.34-1.27l-.31-.2-3.12.82.83-3.04-.2-.32A7.93 7.93 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"></path></svg>
+  </a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const run = () => {
+      const els = document.querySelectorAll('.reveal:not(.in)');
+      if (!els.length) return;
+      try {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.style.animationDelay = ((e.target.dataset.d || 0) * 1) + 'ms';
+              e.target.classList.add('in');
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+        els.forEach((el, i) => { el.dataset.d = (i % 4) * 70; io.observe(el); });
+      } catch (err) {
+        els.forEach((el) => el.classList.add('in'));
+      }
+    };
+    requestAnimationFrame(() => requestAnimationFrame(run));
+
+    // Mobile menu
+    const burger = document.getElementById('navBurger');
+    const drawer = document.getElementById('menuDrawer');
+    const scrim = document.getElementById('menuScrim');
+    const closeBtn = document.getElementById('menuClose');
+    const openMenu = () => { drawer && drawer.classList.add('open'); scrim && scrim.classList.add('open'); };
+    const closeMenu = () => { drawer && drawer.classList.remove('open'); scrim && scrim.classList.remove('open'); };
+    burger && burger.addEventListener('click', openMenu);
+    closeBtn && closeBtn.addEventListener('click', closeMenu);
+    scrim && scrim.addEventListener('click', closeMenu);
+    document.querySelectorAll('.menu-link').forEach((a) => a.addEventListener('click', closeMenu));
+
+    // Flip cards
+    document.querySelectorAll('[data-flip]').forEach((card) => {
+      card.addEventListener('click', () => card.classList.toggle('flipped'));
+    });
+  }
+  renderVals() {
+    return {
+      waLink: 'https://wa.me/525561364975?text=Hola,%20me%20interesa%20tu%20curso%20de%20Cero%20a%20experto%20en%20Meta%20Ads',
+      courseLink: '#', // <-- reemplazar por tu link de checkout de Hotmart
+      formAction: 'https://formsubmit.co/luis.aguilar@agencysmart.mx',
+      igLink: 'https://www.instagram.com/luisaguilar.mkt/',
+      ttLink: 'https://www.tiktok.com/@luisaguilar.mkt',
+      liLink: 'https://www.linkedin.com/in/joseluis-martinez-aguilar/',
+      year: new Date().getFullYear(),
+      stats: [
+        { num: '+8', label: 'años en performance & paid media' },
+        { num: '16+', label: 'especialistas liderados en equipo' },
+        { num: '5', label: 'plataformas: Meta · Google · TikTok · DV360 · Amazon' },
+        { num: '+30', label: 'marcas nacionales e internacionales' },
+      ],
+      testimonials: [
+        { quote: 'Luis transformó por completo nuestras campañas. Pasamos de gastar sin saber a tener un ROAS claro y creciente cada mes.', slotId: 'tst-maria', avatar: 'https://i.pravatar.cc/150?img=45', name: 'María Restrepo', role: 'Marca de moda' },
+        { quote: 'Por fin entendí mis números. Su método es directo, sin humo, y los resultados se vieron desde el primer mes.', slotId: 'tst-juan', avatar: 'https://i.pravatar.cc/150?img=12', name: 'Juan Carlos Díaz', role: 'Marca automotriz' },
+        { quote: 'El curso de Meta Ads vale cada centavo. Hoy gestiono mis propias campañas con total confianza y rentabilidad.', slotId: 'tst-andrea', avatar: 'https://i.pravatar.cc/150?img=32', name: 'Andrea López', role: 'Negocio de servicios' },
+      ],
+    };
+  }
+}
+</script>
+</body>
 </html>
